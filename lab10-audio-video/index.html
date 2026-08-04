@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Experiment 3(b) - Audio and Video</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>HTML5 Audio and Video</h1>
+
+        <p>
+            Demonstration of multimedia elements in HTML5
+        </p>
+    </header>
+
+
+    <main>
+
+        <!-- AUDIO SECTION -->
+
+        <section>
+
+            <h2>Audio Player</h2>
+
+            <p>
+                Click the controls below to play the audio.
+            </p>
+
+            <audio controls preload="metadata">
+
+                <source
+                    src="assets/audio/sample-audio.mp3"
+                    type="audio/mpeg"
+                >
+
+                Your browser does not support the audio element.
+
+            </audio>
+
+        </section>
+
+
+        <!-- VIDEO SECTION -->
+
+        <section>
+
+            <h2>Video Player</h2>
+
+            <p>
+                Click the controls below to play the video.
+            </p>
+
+            <video
+                controls
+                preload="metadata"
+            >
+
+                <source
+                    src="assets/video/sample-video.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support the video element.
+
+            </video>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Full Stack Development Lab</p>
+    </footer>
+
+</body>
+
+</html>
