@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Experiment 2(d) - HTML Frames</title>
+</head>
+
+<frameset cols="33%,34%,33%">
+
+    <frame
+        src="image.html"
+        name="imageFrame"
+        title="Nature image frame"
+        scrolling="no"
+        noresize
+    >
+
+    <frame
+        src="paragraph.html"
+        name="paragraphFrame"
+        title="Web development information frame"
+        noresize
+    >
+
+    <frame
+        src="links.html"
+        name="linkFrame"
+        title="Useful links frame"
+        noresize
+    >
+
+    <noframes>
+        <body>
+            <p>
+                Your browser does not support HTML frames.
+            </p>
+        </body>
+    </noframes>
+
+</frameset>
+
+</html>
