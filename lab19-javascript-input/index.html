@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Input Methods</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2937;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 11px 18px;
+            margin: 8px 5px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            max-width: 100%;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+        }
+
+        .output {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+            min-height: 20px;
+        }
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Input Methods</h1>
+        <p>Experiment 6(c)</p>
+    </header>
+
+    <main>
+
+        <!-- Prompt -->
+        <section class="card">
+            <h2>1. Prompt Input</h2>
+
+            <p>
+                The prompt() method displays a dialog box that accepts
+                input from the user.
+            </p>
+
+            <button onclick="getInputPrompt()">
+                Enter Name Using Prompt
+            </button>
+
+            <div id="promptOutput" class="output">
+                Output will appear here.
+            </div>
+        </section>
+
+
+        <!-- Confirm -->
+        <section class="card">
+            <h2>2. Confirm Input</h2>
+
+            <p>
+                The confirm() method asks the user to choose OK or Cancel.
+            </p>
+
+            <button onclick="getConfirmation()">
+                Open Confirm Dialog
+            </button>
+
+            <div id="confirmOutput" class="output">
+                Output will appear here.
+            </div>
+        </section>
+
+
+        <!-- Text Box -->
+        <section class="card">
+            <h2>3. Text Box Input</h2>
+
+            <label for="textInput">
+                Enter your name:
+            </label>
+
+            <br><br>
+
+            <input
+                type="text"
+                id="textInput"
+                placeholder="Enter your name"
+            >
+
+            <br>
+
+            <button onclick="getInputFromTextBox()">
+                Get Input
+            </button>
+
+            <div id="textOutput" class="output">
+                Output will appear here.
+            </div>
+        </section>
+
+
+        <!-- Dynamic Input -->
+        <section class="card">
+            <h2>4. Dynamic Input</h2>
+
+            <label for="dynamicInput">
+                Type something:
+            </label>
+
+            <br><br>
+
+            <input
+                type="text"
+                id="dynamicInput"
+                oninput="dynamicInputHandler()"
+                placeholder="Start typing..."
+            >
+
+            <div id="dynamicOutput" class="output">
+                Your text will appear here while typing.
+            </div>
+        </section>
+
+
+        <section class="card">
+            <h2>Input Methods Summary</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>prompt()</td>
+                        <td>Accepts input through a dialog box</td>
+                    </tr>
+
+                    <tr>
+                        <td>confirm()</td>
+                        <td>Accepts OK/Cancel choice</td>
+                    </tr>
+
+                    <tr>
+                        <td>Text Box</td>
+                        <td>Accepts input through an HTML input element</td>
+                    </tr>
+
+                    <tr>
+                        <td>oninput</td>
+                        <td>Processes input while the user types</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Full Stack Development — Lab 19</p>
+    </footer>
+
+
+    <script>
+
+        // 1. Prompt Input
+        function getInputPrompt() {
+
+            let name = prompt("Enter your name:");
+
+            if (name !== null && name.trim() !== "") {
+                document.getElementById("promptOutput").textContent =
+                    "Hello, " + name + "!";
+            } else {
+                document.getElementById("promptOutput").textContent =
+                    "No name was entered.";
+            }
+        }
+
+
+        // 2. Confirm Input
+        function getConfirmation() {
+
+            let result = confirm("Do you like JavaScript?");
+
+            if (result) {
+                document.getElementById("confirmOutput").textContent =
+                    "You selected OK.";
+            } else {
+                document.getElementById("confirmOutput").textContent =
+                    "You selected Cancel.";
+            }
+        }
+
+
+        // 3. Text Box Input
+        function getInputFromTextBox() {
+
+            let value = document.getElementById("textInput").value;
+
+            if (value.trim() !== "") {
+                document.getElementById("textOutput").textContent =
+                    "You entered: " + value;
+            } else {
+                document.getElementById("textOutput").textContent =
+                    "Please enter some text.";
+            }
+        }
+
+
+        // 4. Dynamic Input
+        function dynamicInputHandler() {
+
+            let value = document.getElementById("dynamicInput").value;
+
+            document.getElementById("dynamicOutput").textContent =
+                "Current input: " + value;
+        }
+
+    </script>
+
+</body>
+</html>
