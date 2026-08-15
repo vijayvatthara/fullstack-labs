@@ -1,0 +1,197 @@
+/* =========================================
+   LAB 16 - CSS BOX MODEL
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #1f2937;
+}
+
+
+/* Header */
+
+header {
+    padding: 35px 20px;
+    text-align: center;
+
+    background-color: #1e293b;
+    color: white;
+}
+
+
+/* Cards */
+
+.card {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================
+   COMPLETE BOX MODEL DEMONSTRATION
+   ========================================= */
+
+.box-model {
+    margin: 40px auto;
+    padding: 30px;
+
+    background-color: #fef3c7;
+
+    border: 5px solid #f59e0b;
+
+    max-width: 500px;
+}
+
+.margin-label {
+    text-align: center;
+    color: #92400e;
+    font-weight: bold;
+}
+
+.border-box {
+    margin: 25px;
+    padding: 25px;
+
+    background-color: #dbeafe;
+
+    border: 5px solid #2563eb;
+}
+
+.padding-box {
+    padding: 25px;
+
+    background-color: #dcfce7;
+
+    border: 5px solid #16a34a;
+}
+
+.content-box {
+    padding: 25px;
+
+    background-color: white;
+
+    border: 2px solid #111827;
+
+    color: #111827;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.content-demo {
+    width: 250px;
+
+    margin: 20px auto;
+
+    padding: 10px;
+
+    background-color: #dbeafe;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   PADDING
+   ========================================= */
+
+.padding-demo {
+    width: 250px;
+
+    margin: 20px auto;
+
+    padding: 40px;
+
+    background-color: #dcfce7;
+
+    border: 2px solid #16a34a;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   BORDER
+   ========================================= */
+
+.border-demo {
+    width: 250px;
+
+    margin: 20px auto;
+
+    padding: 20px;
+
+    background-color: #fef3c7;
+
+    border: 8px solid #f59e0b;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   MARGIN
+   ========================================= */
+
+.margin-demo {
+    width: 250px;
+
+    margin: 60px auto;
+
+    padding: 20px;
+
+    background-color: #ede9fe;
+
+    border: 3px solid #7c3aed;
+
+    text-align: center;
+}
+
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #e2e8f0;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 30px;
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #1e293b;
+    color: white;
+}
