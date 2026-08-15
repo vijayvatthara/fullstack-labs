@@ -1,0 +1,146 @@
+/* =========================================
+   LAB 15 - CSS FONT AND TEXT PROPERTIES
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #1f2937;
+}
+
+
+/* Header */
+
+header {
+    padding: 35px 20px;
+    text-align: center;
+    background-color: #1e293b;
+    color: white;
+}
+
+
+/* Main cards */
+
+.card {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* -----------------------------------------
+   1. FONT-SIZE
+   ----------------------------------------- */
+
+.font-size-demo {
+    font-size: 24px;
+}
+
+
+/* -----------------------------------------
+   2. FONT-WEIGHT
+   ----------------------------------------- */
+
+.font-weight-demo {
+    font-weight: bold;
+}
+
+
+/* -----------------------------------------
+   3. FONT-STYLE
+   ----------------------------------------- */
+
+.font-style-demo {
+    font-style: italic;
+}
+
+
+/* -----------------------------------------
+   4. TEXT-DECORATION
+   ----------------------------------------- */
+
+.underline-demo {
+    text-decoration: underline;
+}
+
+.line-through-demo {
+    text-decoration: line-through;
+}
+
+
+/* -----------------------------------------
+   5. TEXT-TRANSFORM
+   ----------------------------------------- */
+
+.uppercase-demo {
+    text-transform: uppercase;
+}
+
+.capitalize-demo {
+    text-transform: capitalize;
+}
+
+
+/* -----------------------------------------
+   6. TEXT-ALIGN
+   ----------------------------------------- */
+
+.left-align {
+    text-align: left;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.justify-align {
+    text-align: justify;
+}
+
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #e2e8f0;
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 30px;
+    padding: 25px;
+
+    text-align: center;
+
+    background-color: #1e293b;
+    color: white;
+}
