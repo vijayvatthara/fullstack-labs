@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voter Eligibility</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2937;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e2e8f0;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Voter Eligibility Checker</h1>
+        <p>Experiment 6(d)</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+
+            <h2>Check Voter Eligibility</h2>
+
+            <p>
+                Click the button below to enter the voter's name and age
+                using prompt dialogue boxes.
+            </p>
+
+            <button onclick="checkVoter()">
+                Enter Voter Details
+            </button>
+
+            <div id="result"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Full Stack Development — Lab 20</p>
+    </footer>
+
+
+    <script>
+
+        function checkVoter() {
+
+            // Get voter name
+            let name = prompt("Enter voter's name:");
+
+            // Get voter age
+            let ageInput = prompt("Enter voter's age:");
+
+            // Handle cancellation
+            if (name === null || ageInput === null) {
+                document.getElementById("result").innerHTML =
+                    "<p>Please enter all voter details.</p>";
+
+                return;
+            }
+
+            // Convert age from string to number
+            let age = Number(ageInput);
+
+            // Validate age
+            if (
+                name.trim() === "" ||
+                ageInput.trim() === "" ||
+                !Number.isFinite(age) ||
+                age < 0
+            ) {
+                document.getElementById("result").innerHTML =
+                    "<p>Please enter a valid name and age.</p>";
+
+                return;
+            }
+
+            // Check eligibility
+            let eligibility;
+
+            if (age >= 18) {
+                eligibility = "Eligible to Vote";
+            } else {
+                eligibility = "Not Eligible to Vote";
+            }
+
+            // Display result in table
+            document.getElementById("result").innerHTML = `
+                <table>
+                    <tr>
+                        <th>Voter Name</th>
+                        <th>Age</th>
+                        <th>Eligibility</th>
+                    </tr>
+
+                    <tr>
+                        <td>${name}</td>
+                        <td>${age}</td>
+                        <td>${eligibility}</td>
+                    </tr>
+                </table>
+            `;
+        }
+
+    </script>
+
+</body>
+</html>
