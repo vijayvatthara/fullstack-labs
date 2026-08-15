@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Document Object</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2937;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 11px 18px;
+            margin: 6px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 18px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e2e8f0;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Document Object</h1>
+        <p>Experiment 7(a)</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+
+            <h2>Document Object Properties</h2>
+
+            <p>
+                This program demonstrates selected properties and methods
+                of the JavaScript document object.
+            </p>
+
+            <button onclick="changeTitle()">
+                Change Document Title
+            </button>
+
+            <button onclick="changeColors()">
+                Change Document Colors
+            </button>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Document Object Collections</h2>
+
+            <p>
+                This page contains links, forms and anchors so that their
+                document object collections can be examined.
+            </p>
+
+            <p>
+                <a href="https://www.google.com"
+                   target="_blank"
+                   rel="noopener">
+                    Google
+                </a>
+            </p>
+
+            <p>
+                <a href="https://www.gmail.com"
+                   target="_blank"
+                   rel="noopener"
+                   name="first">
+                    Gmail
+                </a>
+            </p>
+
+            <form>
+                <label>
+                    Name:
+                    <input type="text" name="name">
+                </label>
+            </form>
+
+            <form>
+                <label>
+                    Email:
+                    <input type="email" name="email">
+                </label>
+            </form>
+
+            <form>
+                <label>
+                    Age:
+                    <input type="number" name="age">
+                </label>
+            </form>
+
+        </section>
+
+
+        <section class="card">
+
+            <h2>Document Information</h2>
+
+            <button onclick="showDocumentInfo()">
+                Show Document Information
+            </button>
+
+            <div id="output">
+                Click the button to display document information.
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Full Stack Development — Lab 21</p>
+    </footer>
+
+
+    <script>
+
+        // Document title property
+        function changeTitle() {
+
+            document.title = "Document Object Demo";
+
+            alert("Document title changed successfully.");
+        }
+
+
+        // Document color properties
+        function changeColors() {
+
+            document.bgColor = "#eef6ff";
+            document.fgColor = "#1e293b";
+
+            alert("Document background and foreground colors changed.");
+        }
+
+
+        // Document properties and collections
+        function showDocumentInfo() {
+
+            let output = `
+                <table>
+
+                    <tr>
+                        <th>Document Property</th>
+                        <th>Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>Document Title</td>
+                        <td>${document.title}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Number of Forms</td>
+                        <td>${document.forms.length}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Number of Links</td>
+                        <td>${document.links.length}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Number of Anchors</td>
+                        <td>${document.anchors.length}</td>
+                    </tr>
+
+                </table>
+            `;
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+    </script>
+
+</body>
+</html>
