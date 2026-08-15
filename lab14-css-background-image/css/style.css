@@ -1,0 +1,104 @@
+/* =========================================
+   LAB 14 - FIXED BACKGROUND IMAGE
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 200vh;
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background-image: url("../assets/background.jpg");
+
+    /* Position the image halfway down the page */
+    background-position: center 50%;
+
+    /* Keep background fixed while scrolling */
+    background-attachment: fixed;
+
+    /* Make the image cover the viewing area */
+    background-size: cover;
+
+    background-repeat: no-repeat;
+
+    color: #1f2937;
+}
+
+
+/* Header */
+
+header {
+    padding: 50px 20px;
+    text-align: center;
+
+    background-color: rgba(15, 23, 42, 0.9);
+
+    color: white;
+}
+
+
+/* Main content */
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+
+/* Content cards */
+
+.content-card {
+    margin: 100px 0;
+    padding: 30px;
+
+    background-color: rgba(255, 255, 255, 0.94);
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content-card h2 {
+    margin-top: 0;
+}
+
+.content-card p {
+    line-height: 1.7;
+}
+
+
+/* Code */
+
+code {
+    display: inline-block;
+
+    padding: 12px 16px;
+
+    background-color: #e5e7eb;
+
+    border-radius: 6px;
+
+    font-family: Consolas, monospace;
+}
+
+
+/* Footer */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background-color: rgba(15, 23, 42, 0.95);
+
+    color: white;
+}
