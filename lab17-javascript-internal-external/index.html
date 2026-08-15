@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internal and External JavaScript</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2937;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .internal-btn {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .external-btn {
+            background-color: #059669;
+            color: white;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+            min-height: 25px;
+        }
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Internal and External JavaScript</h1>
+        <p>Experiment 6(a)</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>Internal JavaScript</h2>
+
+            <p>
+                The following button calls a function written directly
+                inside this HTML file.
+            </p>
+
+            <button class="internal-btn" onclick="internalFunction()">
+                Run Internal JavaScript
+            </button>
+        </section>
+
+
+        <section class="card">
+            <h2>External JavaScript</h2>
+
+            <p>
+                The following button calls a function stored in a
+                separate JavaScript file.
+            </p>
+
+            <button class="external-btn" onclick="externalFunction()">
+                Run External JavaScript
+            </button>
+        </section>
+
+
+        <section class="card">
+            <h2>Output</h2>
+
+            <div id="output">
+                Click either button to see the JavaScript output.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Full Stack Development — Lab 17</p>
+    </footer>
+
+
+    <!-- Internal JavaScript -->
+    <script>
+        function internalFunction() {
+            document.getElementById("output").textContent =
+                "Hello from Internal JavaScript!";
+        }
+    </script>
+
+
+    <!-- External JavaScript -->
+    <script src="js/external.js"></script>
+
+</body>
+</html>
