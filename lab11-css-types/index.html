@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Types - Inline, Internal and External</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/external.css">
+
+    <!-- Internal CSS -->
+    <style>
+        .internal-section {
+            background-color: #eef6ff;
+            border-left: 5px solid #2563eb;
+        }
+
+        .internal-text {
+            color: #1d4ed8;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Style Specification Formats</h1>
+        <p>Inline CSS, Internal CSS and External CSS</p>
+    </header>
+
+    <main>
+
+        <!-- Inline CSS -->
+        <section class="card">
+            <h2>1. Inline CSS</h2>
+
+            <p style="color: #b91c1c; font-size: 18px; font-weight: bold;">
+                This paragraph is styled using Inline CSS.
+            </p>
+
+            <p>
+                <strong>Selector:</strong> The HTML element itself
+                <br>
+                <strong>Property:</strong> color, font-size, font-weight
+                <br>
+                <strong>Value:</strong> #b91c1c, 18px, bold
+            </p>
+        </section>
+
+        <!-- Internal CSS -->
+        <section class="card internal-section">
+            <h2>2. Internal CSS</h2>
+
+            <p class="internal-text">
+                This paragraph is styled using Internal CSS.
+            </p>
+
+            <p>
+                <strong>Selector:</strong> .internal-text
+                <br>
+                <strong>Property:</strong> color, font-size
+                <br>
+                <strong>Value:</strong> #1d4ed8, 18px
+            </p>
+        </section>
+
+        <!-- External CSS -->
+        <section class="card external-section">
+            <h2>3. External CSS</h2>
+
+            <p class="external-text">
+                This paragraph is styled using External CSS.
+            </p>
+
+            <p>
+                <strong>Selector:</strong> .external-text
+                <br>
+                <strong>Property:</strong> color, font-size
+                <br>
+                <strong>Value:</strong> #047857, 18px
+            </p>
+        </section>
+
+        <!-- CSS terminology -->
+        <section class="card">
+            <h2>CSS Terminology</h2>
+
+            <div class="example-code">
+                <code>
+                    p { color: blue; }
+                </code>
+            </div>
+
+            <ul>
+                <li>
+                    <strong>Selector:</strong> p
+                </li>
+                <li>
+                    <strong>Property:</strong> color
+                </li>
+                <li>
+                    <strong>Value:</strong> blue
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Full Stack Development - Experiment 3(c)</p>
+    </footer>
+
+</body>
+</html>
