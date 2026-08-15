@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Output Methods</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2937;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 12px 18px;
+            margin: 8px 5px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #innerOutput {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+        }
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Output Methods</h1>
+        <p>Experiment 6(b)</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>1. console.log()</h2>
+
+            <p>
+                Displays output in the browser Developer Console.
+            </p>
+
+            <button onclick="showConsoleLog()">
+                Run console.log()
+            </button>
+        </section>
+
+
+        <section class="card">
+            <h2>2. alert()</h2>
+
+            <p>
+                Displays output in a browser alert dialog.
+            </p>
+
+            <button onclick="showAlert()">
+                Run alert()
+            </button>
+        </section>
+
+
+        <section class="card">
+            <h2>3. innerHTML</h2>
+
+            <p>
+                Displays output inside an HTML element.
+            </p>
+
+            <button onclick="showInnerHTML()">
+                Run innerHTML
+            </button>
+
+            <div id="innerOutput">
+                Output will appear here.
+            </div>
+        </section>
+
+
+        <section class="card">
+            <h2>4. document.write()</h2>
+
+            <p>
+                Writes content directly to the document.
+            </p>
+
+            <button onclick="showDocumentWrite()">
+                Run document.write()
+            </button>
+
+            <p>
+                <strong>Note:</strong>
+                document.write() is demonstrated here for the lab requirement.
+                It is generally avoided in modern dynamic web applications.
+            </p>
+        </section>
+
+
+        <section class="card">
+            <h2>Output Methods Summary</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Output Location</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>console.log()</td>
+                        <td>Browser Console</td>
+                    </tr>
+
+                    <tr>
+                        <td>alert()</td>
+                        <td>Alert Dialog</td>
+                    </tr>
+
+                    <tr>
+                        <td>innerHTML</td>
+                        <td>HTML Element</td>
+                    </tr>
+
+                    <tr>
+                        <td>document.write()</td>
+                        <td>Document/Page</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Full Stack Development — Lab 18</p>
+    </footer>
+
+
+    <script>
+
+        // 1. console.log()
+        function showConsoleLog() {
+            console.log("This message is displayed using console.log().");
+        }
+
+
+        // 2. alert()
+        function showAlert() {
+            alert("This message is displayed using alert().");
+        }
+
+
+        // 3. innerHTML
+        function showInnerHTML() {
+            document.getElementById("innerOutput").innerHTML =
+                "This message is displayed using innerHTML!";
+        }
+
+
+        // 4. document.write()
+        function showDocumentWrite() {
+            document.write(
+                "<h1>Output using document.write()</h1>" +
+                "<p>This message was written using document.write().</p>" +
+                "<p>Use the browser Back button to return to the lab.</p>"
+            );
+        }
+
+    </script>
+
+</body>
+</html>
