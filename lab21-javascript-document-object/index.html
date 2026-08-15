@@ -198,10 +198,26 @@
         // Document color properties
         function changeColors() {
 
-            document.bgColor = "#eef6ff";
-            document.fgColor = "#1e293b";
+            // Document object properties required by the lab
+            document.bgColor = "lightblue";
+            document.fgColor = "darkblue";
 
-            alert("Document background and foreground colors changed.");
+            // Make the change clearly visible
+            document.body.style.backgroundColor = "lightblue";
+            document.body.style.color = "darkblue";
+
+            // Change the major page sections too
+            document.querySelector("header").style.backgroundColor = "darkblue";
+            document.querySelector("header").style.color = "white";
+
+            document.querySelectorAll(".card").forEach(function(card) {
+                card.style.backgroundColor = "#dbeafe";
+            });
+
+            document.querySelector("footer").style.backgroundColor = "darkblue";
+            document.querySelector("footer").style.color = "white";
+
+            alert("Document colors changed successfully!");
         }
 
 
