@@ -1,0 +1,223 @@
+/* =========================================
+   LAB 12 - CSS SELECTOR FORMS
+   ========================================= */
+
+
+/* -----------------------------------------
+   UNIVERSAL SELECTOR
+   ----------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* -----------------------------------------
+   ELEMENT SELECTOR
+   ----------------------------------------- */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #1f2937;
+}
+
+p {
+    line-height: 1.6;
+}
+
+
+/* -----------------------------------------
+   GROUP SELECTOR
+   ----------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Arial, sans-serif;
+}
+
+
+/* -----------------------------------------
+   HEADER
+   ----------------------------------------- */
+
+header {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: #1e293b;
+    color: white;
+}
+
+
+/* -----------------------------------------
+   CARD
+   ----------------------------------------- */
+
+.card {
+    max-width: 850px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* -----------------------------------------
+   ID SELECTOR
+   ----------------------------------------- */
+
+#special-text {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+
+/* -----------------------------------------
+   CLASS SELECTOR
+   ----------------------------------------- */
+
+.highlight {
+    background-color: #fef3c7;
+    padding: 10px;
+    border-left: 5px solid #f59e0b;
+}
+
+
+/* -----------------------------------------
+   COMBINATOR SELECTORS
+   ----------------------------------------- */
+
+/* Descendant selector */
+
+.container p {
+    color: #2563eb;
+}
+
+
+/* Child selector */
+
+.container > p {
+    font-weight: bold;
+}
+
+
+/* Adjacent sibling selector */
+
+h3 + p {
+    background-color: #ecfdf5;
+    padding: 10px;
+    border-left: 4px solid #059669;
+}
+
+
+/* General sibling selector */
+
+h3 ~ p {
+    padding-left: 10px;
+}
+
+
+/* -----------------------------------------
+   PSEUDO-CLASS SELECTORS
+   ----------------------------------------- */
+
+a:hover {
+    color: #dc2626;
+    text-decoration: underline;
+}
+
+button:hover {
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* -----------------------------------------
+   PSEUDO-ELEMENT SELECTORS
+   ----------------------------------------- */
+
+.pseudo-demo::before {
+    content: "Note: ";
+    font-weight: bold;
+    color: #7c3aed;
+}
+
+.pseudo-demo::after {
+    content: " — End of demonstration.";
+    font-style: italic;
+    color: #64748b;
+}
+
+
+/* -----------------------------------------
+   ATTRIBUTE SELECTORS
+   ----------------------------------------- */
+
+input[type="text"] {
+    border: 2px solid #2563eb;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+input[type="email"] {
+    border: 2px solid #059669;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+a[href^="https://"] {
+    font-weight: bold;
+}
+
+
+/* -----------------------------------------
+   BUTTON
+   ----------------------------------------- */
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e5e7eb;
+    transition: 0.2s;
+}
+
+
+/* -----------------------------------------
+   TABLE
+   ----------------------------------------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #e2e8f0;
+}
+
+
+/* -----------------------------------------
+   FOOTER
+   ----------------------------------------- */
+
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    background-color: #1e293b;
+    color: white;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Selector Forms</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Selector Forms</h1>
+        <p>Demonstration of different types of CSS selectors</p>
+    </header>
+
+    <main>
+
+        <!-- 1. SIMPLE SELECTORS -->
+        <section class="card">
+            <h2>1. Simple Selectors</h2>
+
+            <h3>Element Selector</h3>
+            <p>
+                This paragraph is styled using an element selector.
+            </p>
+
+            <h3 id="special-text">ID Selector</h3>
+            <p>
+                This heading uses an ID selector.
+            </p>
+
+            <p class="highlight">
+                This paragraph uses a class selector.
+            </p>
+
+            <h3>Group Selector</h3>
+            <h4>This heading is also affected by the group selector.</h4>
+
+            <div class="universal-demo">
+                Universal selector affects all elements globally.
+            </div>
+        </section>
+
+
+        <!-- 2. COMBINATOR SELECTORS -->
+        <section class="card">
+            <h2>2. Combinator Selectors</h2>
+
+            <div class="container">
+
+                <p>
+                    This is a descendant paragraph.
+                </p>
+
+                <div>
+                    <p>
+                        This is also a descendant paragraph.
+                    </p>
+                </div>
+
+                <p>
+                    This is a direct child paragraph.
+                </p>
+
+            </div>
+
+            <h3>Adjacent Sibling Example</h3>
+            <p>
+                This paragraph immediately follows the h3 element.
+            </p>
+
+            <h3>General Sibling Example</h3>
+
+            <p>
+                This paragraph is a general sibling of the h3.
+            </p>
+
+            <p>
+                This is another general sibling paragraph.
+            </p>
+        </section>
+
+
+        <!-- 3. PSEUDO-CLASS -->
+        <section class="card">
+            <h2>3. Pseudo-Class Selector</h2>
+
+            <p>
+                Move the mouse over the link below:
+            </p>
+
+            <a href="https://developer.mozilla.org/"
+               target="_blank"
+               rel="noopener">
+                Hover over this link
+            </a>
+
+            <br><br>
+
+            <button>
+                Hover over this button
+            </button>
+        </section>
+
+
+        <!-- 4. PSEUDO-ELEMENT -->
+        <section class="card">
+            <h2>4. Pseudo-Element Selector</h2>
+
+            <p class="pseudo-demo">
+                This paragraph demonstrates a pseudo-element.
+            </p>
+        </section>
+
+
+        <!-- 5. ATTRIBUTE SELECTOR -->
+        <section class="card">
+            <h2>5. Attribute Selector</h2>
+
+            <label>
+                Name:
+                <input type="text" placeholder="Enter your name">
+            </label>
+
+            <br><br>
+
+            <label>
+                Email:
+                <input type="email" placeholder="Enter your email">
+            </label>
+
+            <br><br>
+
+            <a href="https://example.com"
+               target="_blank"
+               rel="noopener">
+                External HTTPS Link
+            </a>
+        </section>
+
+
+        <!-- SUMMARY -->
+        <section class="card">
+            <h2>Selector Summary</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Selector Type</th>
+                        <th>Example</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Element</td>
+                        <td>p</td>
+                        <td>Selects all paragraph elements</td>
+                    </tr>
+
+                    <tr>
+                        <td>ID</td>
+                        <td>#special-text</td>
+                        <td>Selects an element by ID</td>
+                    </tr>
+
+                    <tr>
+                        <td>Class</td>
+                        <td>.highlight</td>
+                        <td>Selects elements by class</td>
+                    </tr>
+
+                    <tr>
+                        <td>Descendant</td>
+                        <td>.container p</td>
+                        <td>Selects p elements inside container</td>
+                    </tr>
+
+                    <tr>
+                        <td>Child</td>
+                        <td>.container &gt; p</td>
+                        <td>Selects direct child p elements</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pseudo-class</td>
+                        <td>a:hover</td>
+                        <td>Applies style when link is hovered</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pseudo-element</td>
+                        <td>p::before</td>
+                        <td>Inserts content before an element</td>
+                    </tr>
+
+                    <tr>
+                        <td>Attribute</td>
+                        <td>input[type="text"]</td>
+                        <td>Selects elements based on attributes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Full Stack Development — Lab 12</p>
+    </footer>
+
+</body>
+</html>
