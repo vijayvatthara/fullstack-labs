@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 27 - JavaScript Date Object</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .result {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .result:last-child {
+            border-bottom: none;
+        }
+
+        .method {
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .current {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Date Object</h1>
+    <p>Lab 27 — Date Object Properties and Methods</p>
+</header>
+
+<main>
+
+    <section class="card">
+        <h2>Current Date and Time</h2>
+
+        <div class="current">
+            <strong id="currentDate"></strong>
+        </div>
+    </section>
+
+
+    <section class="card">
+        <h2>Date Object Results</h2>
+
+        <div class="result">
+            <div class="method">getFullYear()</div>
+            <div id="year"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">getMonth()</div>
+            <div id="month"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">getDate()</div>
+            <div id="date"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">getDay()</div>
+            <div id="day"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">getHours()</div>
+            <div id="hours"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">getMinutes()</div>
+            <div id="minutes"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">getSeconds()</div>
+            <div id="seconds"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">getTime()</div>
+            <div id="time"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">toDateString()</div>
+            <div id="dateString"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">toTimeString()</div>
+            <div id="timeString"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">toISOString()</div>
+            <div id="isoString"></div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 27
+</footer>
+
+
+<script>
+
+    // Create Date object
+    let today = new Date();
+
+
+    // Current date and time
+    document.getElementById("currentDate").textContent =
+        today.toString();
+
+
+    // Date methods
+
+    document.getElementById("year").textContent =
+        today.getFullYear();
+
+
+    // getMonth() returns 0 for January, 1 for February, etc.
+    document.getElementById("month").textContent =
+        today.getMonth() + 1;
+
+
+    document.getElementById("date").textContent =
+        today.getDate();
+
+
+    // getDay(): 0 = Sunday, 1 = Monday, ...
+    document.getElementById("day").textContent =
+        today.getDay();
+
+
+    document.getElementById("hours").textContent =
+        today.getHours();
+
+
+    document.getElementById("minutes").textContent =
+        today.getMinutes();
+
+
+    document.getElementById("seconds").textContent =
+        today.getSeconds();
+
+
+    document.getElementById("time").textContent =
+        today.getTime();
+
+
+    document.getElementById("dateString").textContent =
+        today.toDateString();
+
+
+    document.getElementById("timeString").textContent =
+        today.toTimeString();
+
+
+    document.getElementById("isoString").textContent =
+        today.toISOString();
+
+</script>
+
+</body>
+</html>
