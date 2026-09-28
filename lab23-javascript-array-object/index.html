@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 23 - JavaScript Array Object</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .original {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .result:last-child {
+            border-bottom: none;
+        }
+
+        .method {
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Array Object</h1>
+    <p>Lab 23 — Array Object Properties and Methods</p>
+</header>
+
+<main>
+
+    <section class="card">
+        <h2>Original Arrays</h2>
+
+        <div class="original">
+            <strong>Array A:</strong>
+            <span id="arrayA"></span>
+        </div>
+
+        <div class="original">
+            <strong>Array B:</strong>
+            <span id="arrayB"></span>
+        </div>
+
+        <div class="original">
+            <strong>Array C:</strong>
+            <span id="arrayC"></span>
+        </div>
+    </section>
+
+
+    <section class="card">
+        <h2>Array Methods and Results</h2>
+
+        <div class="result">
+            <div class="method">concat()</div>
+            <div id="concatResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">pop()</div>
+            <div id="popResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">push()</div>
+            <div id="pushResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">reverse()</div>
+            <div id="reverseResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">sort()</div>
+            <div id="sortResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">splice()</div>
+            <div id="spliceResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">shift()</div>
+            <div id="shiftResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">unshift()</div>
+            <div id="unshiftResult"></div>
+        </div>
+
+    </section>
+
+
+    <section class="card">
+        <h2>Array Length Property</h2>
+
+        <p>
+            Array A length:
+            <strong id="lengthResult"></strong>
+        </p>
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 23
+</footer>
+
+
+<script>
+
+    // Creating arrays
+    let a = [70, 20, 300, 60, 50];
+    let b = new Array(1.1, 2.2, 3.3);
+    let c = ["ramu", "naresh"];
+
+
+    // Display original arrays
+    document.getElementById("arrayA").textContent = a.join(", ");
+    document.getElementById("arrayB").textContent = b.join(", ");
+    document.getElementById("arrayC").textContent = c.join(", ");
+
+
+    // concat()
+    let concatArray = a.concat(b, c);
+
+    document.getElementById("concatResult").textContent =
+        "After concatenation: " + concatArray.join(", ");
+
+
+    // pop()
+    a.pop();
+
+    document.getElementById("popResult").textContent =
+        "After pop operation: " + a.join(" ");
+
+
+    // push()
+    b.push(4.4, 5.5);
+
+    document.getElementById("pushResult").textContent =
+        "After push operation: " + b.join(" ");
+
+
+    // reverse()
+    c.reverse();
+
+    document.getElementById("reverseResult").textContent =
+        "After reversing: " + c.join(" ");
+
+
+    // sort()
+    a.sort();
+
+    document.getElementById("sortResult").textContent =
+        "After sorting: " + a.join(" ");
+
+
+    // splice()
+    a.splice(2, 1, "suresh", "ramesh");
+
+    document.getElementById("spliceResult").textContent =
+        "After splice operation: " + a.join(" ");
+
+
+    // shift()
+    a.shift();
+
+    document.getElementById("shiftResult").textContent =
+        "After shift operation: " + a.join(" ");
+
+
+    // unshift()
+    a.unshift(100, 200);
+
+    document.getElementById("unshiftResult").textContent =
+        "After unshift operation: " + a.join(" ");
+
+
+    // length property
+    document.getElementById("lengthResult").textContent = a.length;
+
+</script>
+
+</body>
+</html>
