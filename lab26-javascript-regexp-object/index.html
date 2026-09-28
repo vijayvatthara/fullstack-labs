@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 26 - JavaScript RegExp Object</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .input-text {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .result:last-child {
+            border-bottom: none;
+        }
+
+        .method {
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Regular Expression Object</h1>
+    <p>Lab 26 — RegExp Object Properties and Methods</p>
+</header>
+
+<main>
+
+    <section class="card">
+        <h2>Input Text</h2>
+
+        <div class="input-text">
+            <strong>Text:</strong>
+            <span id="inputText"></span>
+        </div>
+    </section>
+
+
+    <section class="card">
+        <h2>Regular Expression Results</h2>
+
+        <div class="result">
+            <div class="method">test()</div>
+            <div id="testResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">exec()</div>
+            <div id="execResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">match()</div>
+            <div id="matchResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">search()</div>
+            <div id="searchResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">replace()</div>
+            <div id="replaceResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">flags</div>
+            <div id="flagsResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">source</div>
+            <div id="sourceResult"></div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 26
+</footer>
+
+
+<script>
+
+    // Input text
+    let text = "JavaScript is powerful. JavaScript is widely used.";
+
+
+    // Creating a Regular Expression
+    let pattern = /JavaScript/g;
+
+
+    // Display input
+    document.getElementById("inputText").textContent = text;
+
+
+    // test()
+    let testPattern = /JavaScript/;
+
+    document.getElementById("testResult").textContent =
+        "Pattern found: " + testPattern.test(text);
+
+
+    // exec()
+    let execPattern = /JavaScript/;
+
+    let execResult = execPattern.exec(text);
+
+    document.getElementById("execResult").textContent =
+        execResult ? "Matched text: " + execResult[0] : "No match";
+
+
+    // match()
+    let matchResult = text.match(pattern);
+
+    document.getElementById("matchResult").textContent =
+        matchResult ? matchResult.join(", ") : "No match";
+
+
+    // search()
+    let searchResult = text.search(/powerful/);
+
+    document.getElementById("searchResult").textContent =
+        "Starting index: " + searchResult;
+
+
+    // replace()
+    let replaceResult = text.replace(/JavaScript/g, "JS");
+
+    document.getElementById("replaceResult").textContent =
+        replaceResult;
+
+
+    // flags property
+    document.getElementById("flagsResult").textContent =
+        pattern.flags;
+
+
+    // source property
+    document.getElementById("sourceResult").textContent =
+        pattern.source;
+
+</script>
+
+</body>
+</html>
