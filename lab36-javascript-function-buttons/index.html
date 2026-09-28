@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number Operations</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .container {
+            width: min(650px, 92%);
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        #number {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 25px;
+            padding: 18px;
+            min-height: 60px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            line-height: 1.7;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Number Operations</h1>
+
+        <label for="number">Enter a number</label>
+
+        <input
+            type="number"
+            id="number"
+            placeholder="Enter number"
+        >
+
+        <div class="buttons">
+            <button onclick="factorial()">Factorial</button>
+            <button onclick="fibonacci()">Fibonacci</button>
+            <button onclick="prime()">Prime</button>
+            <button onclick="palindrome()">Palindrome</button>
+        </div>
+
+        <div id="result">
+            Result will appear here.
+        </div>
+
+    </div>
+
+    <script>
+
+        // Factorial
+        function factorial() {
+
+            const n = parseInt(
+                document.getElementById("number").value
+            );
+
+            if (isNaN(n) || n < 0) {
+                showResult("Please enter a valid non-negative number.");
+                return;
+            }
+
+            let fact = 1;
+
+            for (let i = 1; i <= n; i++) {
+                fact *= i;
+            }
+
+            showResult("Factorial is: " + fact);
+        }
+
+
+        // Fibonacci series
+        function fibonacci() {
+
+            const n = parseInt(
+                document.getElementById("number").value
+            );
+
+            if (isNaN(n) || n < 0) {
+                showResult("Please enter a valid non-negative number.");
+                return;
+            }
+
+            let result = "Fibonacci sequence is: 0 1";
+
+            let f1 = 0;
+            let f2 = 1;
+            let f3 = f1 + f2;
+
+            while (f3 <= n) {
+
+                result += " " + f3;
+
+                f1 = f2;
+                f2 = f3;
+                f3 = f1 + f2;
+            }
+
+            showResult(result);
+        }
+
+
+        // Prime numbers
+        function prime() {
+
+            const n = parseInt(
+                document.getElementById("number").value
+            );
+
+            if (isNaN(n) || n < 2) {
+                showResult("Please enter a number greater than or equal to 2.");
+                return;
+            }
+
+            let result = "Prime numbers: ";
+
+            for (let i = 2; i <= n; i++) {
+
+                let count = 0;
+
+                for (let j = 1; j <= i; j++) {
+
+                    if (i % j === 0) {
+                        count++;
+                    }
+                }
+
+                if (count === 2) {
+                    result += i + " ";
+                }
+            }
+
+            showResult(result);
+        }
+
+
+        // Palindrome
+        function palindrome() {
+
+            const n = parseInt(
+                document.getElementById("number").value
+            );
+
+            if (isNaN(n) || n < 0) {
+                showResult("Please enter a valid non-negative number.");
+                return;
+            }
+
+            const original = n;
+            let temp = n;
+            let reverse = 0;
+
+            while (temp > 0) {
+
+                const digit = temp % 10;
+
+                reverse = reverse * 10 + digit;
+
+                temp = Math.floor(temp / 10);
+            }
+
+            if (reverse === original) {
+                showResult("Given number is Palindrome");
+            } else {
+                showResult("Given number is not a Palindrome");
+            }
+        }
+
+
+        // Display result
+        function showResult(message) {
+            document.getElementById("result").innerHTML = message;
+        }
+
+    </script>
+
+</body>
+</html>
