@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 32 - Object Loops</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .object-box {
+            background: #e0f2fe;
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .object-box p {
+            margin: 8px 0;
+        }
+
+        .loop-result {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2563eb;
+            margin-top: 15px;
+        }
+
+        .loop-result p {
+            margin: 8px 0;
+        }
+
+        .method {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Object Loops</h1>
+    <p>Lab 32 — for-in, forEach and for-of</p>
+</header>
+
+<main>
+
+    <section class="card">
+
+        <h2>Object</h2>
+
+        <div class="object-box">
+            <p><strong>Name:</strong> John</p>
+            <p><strong>Age:</strong> 30</p>
+            <p><strong>City:</strong> New York</p>
+        </div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2><span class="method">for-in</span> Loop</h2>
+
+        <div class="loop-result" id="forInResult"></div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2><span class="method">forEach</span> Loop</h2>
+
+        <div class="loop-result" id="forEachResult"></div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2><span class="method">for-of</span> Loop</h2>
+
+        <div class="loop-result" id="forOfResult"></div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 32
+</footer>
+
+
+<script>
+
+    // Example object
+    let person = {
+        name: "John",
+        age: 30,
+        city: "New York"
+    };
+
+
+    // ==========================================
+    // FOR-IN LOOP
+    // ==========================================
+
+    let forInOutput = "";
+
+    for (let key in person) {
+
+        forInOutput +=
+            "<p><strong>" +
+            key +
+            ":</strong> " +
+            person[key] +
+            "</p>";
+    }
+
+    document.getElementById("forInResult").innerHTML =
+        forInOutput;
+
+
+    // ==========================================
+    // FOREACH LOOP
+    // ==========================================
+
+    let forEachOutput = "";
+
+    Object.entries(person).forEach(
+        ([key, value]) => {
+
+            forEachOutput +=
+                "<p><strong>" +
+                key +
+                ":</strong> " +
+                value +
+                "</p>";
+        }
+    );
+
+    document.getElementById("forEachResult").innerHTML =
+        forEachOutput;
+
+
+    // ==========================================
+    // FOR-OF LOOP
+    // ==========================================
+
+    let forOfOutput = "";
+
+    for (let [key, value] of Object.entries(person)) {
+
+        forOfOutput +=
+            "<p><strong>" +
+            key +
+            ":</strong> " +
+            value +
+            "</p>";
+    }
+
+    document.getElementById("forOfResult").innerHTML =
+        forOfOutput;
+
+</script>
+
+</body>
+
+</html>
