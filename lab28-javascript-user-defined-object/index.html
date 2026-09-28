@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 28 - User Defined Object</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .success {
+            background: #ecfdf5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>User-Defined JavaScript Object</h1>
+    <p>Lab 28 — Properties, Methods, Accessors and Constructor</p>
+</header>
+
+<main>
+
+    <section class="card">
+
+        <h2>Person Object</h2>
+
+        <div class="info">
+            <div class="label">Name</div>
+            <div id="name"></div>
+        </div>
+
+        <div class="info">
+            <div class="label">Age</div>
+            <div id="age"></div>
+        </div>
+
+        <div class="info">
+            <div class="label">Country</div>
+            <div id="country"></div>
+        </div>
+
+        <div class="info">
+            <div class="label">Status</div>
+            <div id="status"></div>
+        </div>
+
+        <div class="success">
+            <strong>Object operations demonstrated:</strong>
+            Constructor, Properties, Method, Getter and Setter.
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 28
+</footer>
+
+
+<script>
+
+    // User-defined object using a class
+    class Person {
+
+        // Constructor
+        constructor(name, age, country) {
+            this._name = name;
+            this.age = age;
+            this.country = country;
+        }
+
+
+        // Method to display person details
+        display() {
+            return `Name: ${this._name}, Age: ${this.age}, Country: ${this.country}`;
+        }
+
+
+        // Getter accessor
+        get name() {
+            return this._name;
+        }
+
+
+        // Setter accessor
+        set name(newName) {
+
+            if (newName.length > 0) {
+                this._name = newName;
+            }
+        }
+
+
+        // Another method
+        celebrateBirthday() {
+            this.age += 1;
+            return `${this._name} just turned ${this.age}!`;
+        }
+    }
+
+
+    // Creating object using constructor
+    let person1 = new Person("Ravi", 25, "India");
+
+
+    // Display initial properties
+    document.getElementById("name").textContent =
+        person1.name;
+
+    document.getElementById("age").textContent =
+        person1.age;
+
+    document.getElementById("country").textContent =
+        person1.country;
+
+
+    // Calling display() method
+    console.log(person1.display());
+
+
+    // Using setter to modify name
+    person1.name = "Rajesh";
+
+
+    // Using getter to access modified name
+    document.getElementById("name").textContent =
+        person1.name;
+
+
+    // Calling celebrateBirthday() method
+    document.getElementById("status").textContent =
+        person1.celebrateBirthday();
+
+
+    // Display final age
+    document.getElementById("age").textContent =
+        person1.age;
+
+</script>
+
+</body>
+
+</html>
