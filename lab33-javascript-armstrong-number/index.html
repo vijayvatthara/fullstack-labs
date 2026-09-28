@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 33 - Armstrong Number</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .info {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #ecfdf5;
+            font-weight: bold;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Armstrong Number</h1>
+    <p>Lab 33 — JavaScript Conditional Statements and Loops</p>
+</header>
+
+<main>
+
+    <section class="card">
+
+        <h2>Check Armstrong Number</h2>
+
+        <div class="info">
+            Enter a number to determine whether it is an
+            <strong>Armstrong Number</strong>.
+            <br><br>
+            Example:
+            <strong>153 = 1³ + 5³ + 3³ = 153</strong>
+        </div>
+
+        <button onclick="checkArmstrong()">
+            Enter Number
+        </button>
+
+        <div id="result"></div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 33
+</footer>
+
+
+<script>
+
+    function checkArmstrong() {
+
+        // Get number from user
+        let n = parseInt(
+            prompt("Enter a number:")
+        );
+
+
+        // Store original number
+        let originalNumber = n;
+
+        let temp = n;
+        let count = 0;
+        let sum = 0;
+
+
+        // Count the number of digits
+        while (temp > 0) {
+
+            count++;
+
+            temp = parseInt(temp / 10);
+        }
+
+
+        // Calculate Armstrong sum
+        temp = n;
+
+        while (temp > 0) {
+
+            let digit = temp % 10;
+
+            sum = sum + Math.pow(digit, count);
+
+            temp = parseInt(temp / 10);
+        }
+
+
+        // Check result
+        let message;
+
+        if (originalNumber === sum) {
+
+            message =
+                originalNumber + " is an Armstrong number";
+
+        } else {
+
+            message =
+                originalNumber + " is not an Armstrong number";
+        }
+
+
+        // Alert result
+        alert(message);
+
+
+        // Display result on page
+        document.getElementById("result").style.display = "block";
+
+        document.getElementById("result").textContent =
+            message;
+    }
+
+</script>
+
+</body>
+
+</html>
