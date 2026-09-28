@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 31 - JavaScript Loops</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .loop-result {
+            margin-top: 15px;
+            padding: 18px;
+            background: #e0f2fe;
+            border-radius: 8px;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .method {
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Loops</h1>
+    <p>Lab 31 — For, While and Do-While Loops</p>
+</header>
+
+<main>
+
+    <section class="card">
+        <h2><span class="method">for</span> Loop</h2>
+
+        <div class="loop-result" id="forResult"></div>
+    </section>
+
+
+    <section class="card">
+        <h2><span class="method">while</span> Loop</h2>
+
+        <div class="loop-result" id="whileResult"></div>
+    </section>
+
+
+    <section class="card">
+        <h2><span class="method">do-while</span> Loop</h2>
+
+        <div class="loop-result" id="doWhileResult"></div>
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 31
+</footer>
+
+
+<script>
+
+    // ==========================================
+    // FOR LOOP
+    // ==========================================
+
+    let forOutput = "";
+
+    for (let i = 1; i <= 10; i++) {
+        forOutput += i + " ";
+    }
+
+    document.getElementById("forResult").textContent =
+        forOutput;
+
+
+    // ==========================================
+    // WHILE LOOP
+    // ==========================================
+
+    let whileOutput = "";
+    let j = 1;
+
+    while (j <= 10) {
+        whileOutput += j + " ";
+        j++;
+    }
+
+    document.getElementById("whileResult").textContent =
+        whileOutput;
+
+
+    // ==========================================
+    // DO-WHILE LOOP
+    // ==========================================
+
+    let doWhileOutput = "";
+    let k = 1;
+
+    do {
+        doWhileOutput += k + " ";
+        k++;
+    } while (k <= 10);
+
+    document.getElementById("doWhileResult").textContent =
+        doWhileOutput;
+
+</script>
+
+</body>
+
+</html>
