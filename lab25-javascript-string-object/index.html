@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 25 - JavaScript String Object</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .original {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .result:last-child {
+            border-bottom: none;
+        }
+
+        .method {
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript String Object</h1>
+    <p>Lab 25 — String Object Properties and Methods</p>
+</header>
+
+<main>
+
+    <section class="card">
+        <h2>Original String</h2>
+
+        <div class="original">
+            <strong>String:</strong>
+            <span id="originalString"></span>
+        </div>
+    </section>
+
+
+    <section class="card">
+        <h2>String Properties and Methods</h2>
+
+        <div class="result">
+            <div class="method">length</div>
+            <div id="lengthResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">toUpperCase()</div>
+            <div id="upperResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">toLowerCase()</div>
+            <div id="lowerResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">charAt()</div>
+            <div id="charAtResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">indexOf()</div>
+            <div id="indexResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">includes()</div>
+            <div id="includesResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">substring()</div>
+            <div id="substringResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">slice()</div>
+            <div id="sliceResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">replace()</div>
+            <div id="replaceResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">trim()</div>
+            <div id="trimResult"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">split()</div>
+            <div id="splitResult"></div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 25
+</footer>
+
+
+<script>
+
+    // Creating a String object/value
+    let text = "  JavaScript String Object  ";
+
+
+    // Display original string
+    document.getElementById("originalString").textContent = text;
+
+
+    // length property
+    document.getElementById("lengthResult").textContent =
+        "Length = " + text.length;
+
+
+    // toUpperCase()
+    document.getElementById("upperResult").textContent =
+        text.toUpperCase();
+
+
+    // toLowerCase()
+    document.getElementById("lowerResult").textContent =
+        text.toLowerCase();
+
+
+    // charAt()
+    document.getElementById("charAtResult").textContent =
+        "Character at index 3 = " + text.charAt(3);
+
+
+    // indexOf()
+    document.getElementById("indexResult").textContent =
+        "Index of 'Script' = " + text.indexOf("Script");
+
+
+    // includes()
+    document.getElementById("includesResult").textContent =
+        "Contains 'String'? " + text.includes("String");
+
+
+    // substring()
+    document.getElementById("substringResult").textContent =
+        text.substring(2, 12);
+
+
+    // slice()
+    document.getElementById("sliceResult").textContent =
+        text.slice(2, 12);
+
+
+    // replace()
+    document.getElementById("replaceResult").textContent =
+        text.replace("JavaScript", "JS");
+
+
+    // trim()
+    document.getElementById("trimResult").textContent =
+        text.trim();
+
+
+    // split()
+    document.getElementById("splitResult").textContent =
+        text.trim().split(" ").join(" | ");
+
+</script>
+
+</body>
+</html>
