@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 29 - Larger Number</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .info {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #ecfdf5;
+            font-weight: bold;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Conditional Statements</h1>
+    <p>Lab 29 — Find the Larger Number</p>
+</header>
+
+<main>
+
+    <section class="card">
+
+        <h2>Find the Largest of Three Numbers</h2>
+
+        <div class="info">
+            Click the button below and enter three integers using the
+            prompt dialogs.
+        </div>
+
+        <button onclick="findLargest()">
+            Enter Three Numbers
+        </button>
+
+        <div id="result"></div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 29
+</footer>
+
+
+<script>
+
+    function findLargest() {
+
+        // Get three integers from the user
+        let num1 = parseInt(
+            prompt("Enter the first number:")
+        );
+
+        let num2 = parseInt(
+            prompt("Enter the second number:")
+        );
+
+        let num3 = parseInt(
+            prompt("Enter the third number:")
+        );
+
+
+        // Check whether all numbers are equal
+        if (num1 === num2 && num2 === num3) {
+
+            alert("EQUAL NUMBERS");
+
+            document.getElementById("result").style.display = "block";
+
+            document.getElementById("result").textContent =
+                "Result: EQUAL NUMBERS";
+
+        }
+
+        else {
+
+            // Find the largest number
+            let largest = Math.max(num1, num2, num3);
+
+            alert(largest + " LARGER NUMBER");
+
+            document.getElementById("result").style.display = "block";
+
+            document.getElementById("result").textContent =
+                largest + " LARGER NUMBER";
+        }
+    }
+
+</script>
+
+</body>
+
+</html>
