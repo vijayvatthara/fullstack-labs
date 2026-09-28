@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 24 - JavaScript Math Object</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .result {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .result:last-child {
+            border-bottom: none;
+        }
+
+        .method {
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Math Object</h1>
+    <p>Lab 24 — Math Object Properties and Methods</p>
+</header>
+
+<main>
+
+    <section class="card">
+        <h2>Math Object Results</h2>
+
+        <div class="result">
+            <div class="method">Math.PI</div>
+            <div id="pi"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.E</div>
+            <div id="e"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.abs()</div>
+            <div id="abs"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.ceil()</div>
+            <div id="ceil"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.floor()</div>
+            <div id="floor"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.round()</div>
+            <div id="round"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.sqrt()</div>
+            <div id="sqrt"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.pow()</div>
+            <div id="pow"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.max()</div>
+            <div id="max"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.min()</div>
+            <div id="min"></div>
+        </div>
+
+        <div class="result">
+            <div class="method">Math.random()</div>
+            <div id="random"></div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 24
+</footer>
+
+
+<script>
+
+    // Math object properties
+
+    document.getElementById("pi").textContent =
+        Math.PI;
+
+    document.getElementById("e").textContent =
+        Math.E;
+
+
+    // Math object methods
+
+    document.getElementById("abs").textContent =
+        "Math.abs(-25) = " + Math.abs(-25);
+
+    document.getElementById("ceil").textContent =
+        "Math.ceil(4.3) = " + Math.ceil(4.3);
+
+    document.getElementById("floor").textContent =
+        "Math.floor(4.8) = " + Math.floor(4.8);
+
+    document.getElementById("round").textContent =
+        "Math.round(4.6) = " + Math.round(4.6);
+
+    document.getElementById("sqrt").textContent =
+        "Math.sqrt(64) = " + Math.sqrt(64);
+
+    document.getElementById("pow").textContent =
+        "Math.pow(2, 5) = " + Math.pow(2, 5);
+
+    document.getElementById("max").textContent =
+        "Math.max(10, 50, 30, 20) = " +
+        Math.max(10, 50, 30, 20);
+
+    document.getElementById("min").textContent =
+        "Math.min(10, 50, 30, 20) = " +
+        Math.min(10, 50, 30, 20);
+
+    document.getElementById("random").textContent =
+        "Math.random() = " + Math.random();
+
+</script>
+
+</body>
+</html>
