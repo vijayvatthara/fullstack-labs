@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lab 30 - Switch Case Weekdays</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+
+        .info {
+            background: #e0f2fe;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #ecfdf5;
+            font-weight: bold;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Switch Case</h1>
+    <p>Lab 30 — Display Week Days</p>
+</header>
+
+<main>
+
+    <section class="card">
+
+        <h2>Week Day Display</h2>
+
+        <div class="info">
+            Enter a number from <strong>0 to 6</strong>.
+            The program will display the corresponding day.
+        </div>
+
+        <button onclick="displayDay()">
+            Enter Day Number
+        </button>
+
+        <div id="result"></div>
+
+    </section>
+
+</main>
+
+<footer>
+    Full Stack Development-I • Lab 30
+</footer>
+
+
+<script>
+
+    function displayDay() {
+
+        // Get number from user
+        let dayNumber = parseInt(
+            prompt("Enter a number between 0 and 6:")
+        );
+
+        let day;
+
+
+        // Switch case
+        switch (dayNumber) {
+
+            case 0:
+                day = "Sunday";
+                break;
+
+            case 1:
+                day = "Monday";
+                break;
+
+            case 2:
+                day = "Tuesday";
+                break;
+
+            case 3:
+                day = "Wednesday";
+                break;
+
+            case 4:
+                day = "Thursday";
+                break;
+
+            case 5:
+                day = "Friday";
+                break;
+
+            case 6:
+                day = "Saturday";
+                break;
+
+            default:
+                day = "Invalid input! Please enter a number between 0 and 6.";
+                break;
+        }
+
+
+        // Display result
+        alert(day);
+
+        document.getElementById("result").style.display = "block";
+
+        document.getElementById("result").textContent =
+            "Result: " + day;
+    }
+
+</script>
+
+</body>
+
+</html>
