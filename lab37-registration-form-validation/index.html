@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Form Validation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .container {
+            width: min(500px, 92%);
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #message {
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Registration Form</h1>
+
+        <form id="registration">
+
+            <div class="form-group">
+                <label for="uname">Name</label>
+                <input
+                    type="text"
+                    id="uname"
+                    placeholder="Enter your name"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input
+                    type="password"
+                    id="pwd"
+                    placeholder="Enter your password"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input
+                    type="text"
+                    id="mobile"
+                    placeholder="Enter 10-digit mobile number"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input
+                    type="text"
+                    id="email"
+                    placeholder="example@gmail.com"
+                >
+            </div>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <div id="message"></div>
+
+    </div>
+
+
+    <script>
+
+        function validateForm(event) {
+
+            event.preventDefault();
+
+            const username = document.getElementById("uname").value.trim();
+            const password = document.getElementById("pwd").value;
+            const mobile = document.getElementById("mobile").value.trim();
+            const email = document.getElementById("email").value.trim();
+
+            const message = document.getElementById("message");
+
+
+            // Name validation
+            // Starts with alphabet and minimum 6 characters
+            const namePattern = /^[A-Za-z][A-Za-z0-9_ ]+$/;
+
+            if (username === "") {
+                showMessage("Please enter your name.");
+                document.getElementById("uname").focus();
+                return;
+            }
+
+            if (username.length < 6) {
+                showMessage("Name should contain at least 6 characters.");
+                document.getElementById("uname").focus();
+                return;
+            }
+
+            if (!namePattern.test(username)) {
+                showMessage(
+                    "Name must start with an alphabet and contain only alphanumeric characters."
+                );
+                document.getElementById("uname").focus();
+                return;
+            }
+
+
+            // Password validation
+            const checkSpecial = /[*@!#$%&]/.test(password);
+            const checkUpper = /[A-Z]/.test(password);
+            const checkLower = /[a-z]/.test(password);
+
+            if (password === "") {
+                showMessage("Please enter your password.");
+                document.getElementById("pwd").focus();
+                return;
+            }
+
+            if (!(checkSpecial && checkUpper && checkLower)) {
+                showMessage(
+                    "Password should contain at least one lowercase letter, uppercase letter and special symbol."
+                );
+                document.getElementById("pwd").focus();
+                return;
+            }
+
+
+            // Mobile validation
+            const mobilePattern = /^[0-9]{10}$/;
+
+            if (mobile === "") {
+                showMessage("Please enter your mobile number.");
+                document.getElementById("mobile").focus();
+                return;
+            }
+
+            if (!mobilePattern.test(mobile)) {
+                showMessage(
+                    "Mobile number must contain exactly 10 digits."
+                );
+                document.getElementById("mobile").focus();
+                return;
+            }
+
+
+            // E-mail validation
+            const atPosition = email.indexOf("@");
+            const dotPosition = email.lastIndexOf(".");
+
+            if (email === "") {
+                showMessage("Please enter your e-mail address.");
+                document.getElementById("email").focus();
+                return;
+            }
+
+            if (
+                atPosition < 1 ||
+                dotPosition < atPosition + 2 ||
+                dotPosition + 2 >= email.length
+            ) {
+                showMessage("Not a valid e-mail address.");
+                document.getElementById("email").focus();
+                return;
+            }
+
+
+            // Successful validation
+            showMessage("Registration Successful!");
+
+        }
+
+
+        function showMessage(text) {
+
+            const message = document.getElementById("message");
+
+            message.textContent = text;
+            message.style.display = "block";
+        }
+
+
+        document
+            .getElementById("registration")
+            .addEventListener("submit", validateForm);
+
+    </script>
+
+</body>
+
+</html>
