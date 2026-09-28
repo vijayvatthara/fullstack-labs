@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Window Object</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #1f2937;
+        }
+
+        header {
+            padding: 35px 20px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 25px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 11px 18px;
+            margin: 6px;
+            border: none;
+            border-radius: 6px;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #output,
+        #timerOutput {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e2e8f0;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+            background-color: #1e293b;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>JavaScript Window Object</h1>
+        <p>Experiment 7(b)</p>
+    </header>
+
+
+    <main>
+
+        <!-- Window Properties -->
+        <section class="card">
+
+            <h2>1. Window Object Properties</h2>
+
+            <button onclick="showWindowProperties()">
+                Show Window Properties
+            </button>
+
+            <div id="output">
+                Click the button to display window information.
+            </div>
+
+        </section>
+
+
+        <!-- Alert -->
+        <section class="card">
+
+            <h2>2. Alert Method</h2>
+
+            <p>
+                The alert() method displays a message dialog box.
+            </p>
+
+            <button onclick="showAlert()">
+                Run Alert
+            </button>
+
+        </section>
+
+
+        <!-- Confirm -->
+        <section class="card">
+
+            <h2>3. Confirm Method</h2>
+
+            <p>
+                The confirm() method allows the user to select OK or Cancel.
+            </p>
+
+            <button onclick="showConfirm()">
+                Run Confirm
+            </button>
+
+            <div id="confirmOutput">
+                Result will appear here.
+            </div>
+
+        </section>
+
+
+        <!-- Prompt -->
+        <section class="card">
+
+            <h2>4. Prompt Method</h2>
+
+            <p>
+                The prompt() method accepts input from the user.
+            </p>
+
+            <button onclick="showPrompt()">
+                Run Prompt
+            </button>
+
+            <div id="promptOutput">
+                Result will appear here.
+            </div>
+
+        </section>
+
+
+        <!-- setTimeout -->
+        <section class="card">
+
+            <h2>5. setTimeout()</h2>
+
+            <p>
+                Displays a message after a delay of 3 seconds.
+            </p>
+
+            <button onclick="runTimeout()">
+                Start 3-Second Timer
+            </button>
+
+            <div id="timerOutput">
+                Timer has not started.
+            </div>
+
+        </section>
+
+
+        <!-- setInterval -->
+        <section class="card">
+
+            <h2>6. setInterval()</h2>
+
+            <p>
+                The counter runs every 2 seconds and stops after 5 counts.
+            </p>
+
+            <button onclick="runInterval()">
+                Start Interval
+            </button>
+
+            <div id="intervalOutput">
+                Interval has not started.
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Full Stack Development — Lab 22</p>
+    </footer>
+
+
+    <script>
+
+        // 1. Window properties
+        function showWindowProperties() {
+
+            let output = `
+                <table>
+
+                    <tr>
+                        <th>Window Property</th>
+                        <th>Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>Window Width</td>
+                        <td>${window.innerWidth}px</td>
+                    </tr>
+
+                    <tr>
+                        <td>Window Height</td>
+                        <td>${window.innerHeight}px</td>
+                    </tr>
+
+                    <tr>
+                        <td>Current URL</td>
+                        <td>${window.location.href}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Browser Name</td>
+                        <td>${window.navigator.appName}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Platform</td>
+                        <td>${window.navigator.platform}</td>
+                    </tr>
+
+                </table>
+            `;
+
+            document.getElementById("output").innerHTML = output;
+        }
+
+
+        // 2. Alert
+        function showAlert() {
+
+            window.alert(
+                "Welcome to the JavaScript Window Object Demo!"
+            );
+        }
+
+
+        // 3. Confirm
+        function showConfirm() {
+
+            let userResponse =
+                window.confirm("Do you like JavaScript?");
+
+            if (userResponse) {
+
+                document.getElementById("confirmOutput").textContent =
+                    "You selected OK.";
+
+            } else {
+
+                document.getElementById("confirmOutput").textContent =
+                    "You selected Cancel.";
+            }
+        }
+
+
+        // 4. Prompt
+        function showPrompt() {
+
+            let userName =
+                window.prompt("Enter your name:");
+
+            if (userName !== null && userName.trim() !== "") {
+
+                document.getElementById("promptOutput").textContent =
+                    "Hello, " + userName + "!";
+
+            } else {
+
+                document.getElementById("promptOutput").textContent =
+                    "No name was entered.";
+            }
+        }
+
+
+        // 5. setTimeout
+        function runTimeout() {
+
+            document.getElementById("timerOutput").textContent =
+                "Waiting for 3 seconds...";
+
+            window.setTimeout(function () {
+
+                document.getElementById("timerOutput").textContent =
+                    "3 seconds completed!";
+
+            }, 3000);
+        }
+
+
+        // 6. setInterval
+        let intervalRunning = false;
+
+        function runInterval() {
+
+            if (intervalRunning) {
+                return;
+            }
+
+            intervalRunning = true;
+
+            let count = 0;
+
+            document.getElementById("intervalOutput").textContent =
+                "Interval started...";
+
+            let intervalId = window.setInterval(function () {
+
+                count++;
+
+                document.getElementById("intervalOutput").textContent =
+                    "Interval running... Count: " + count;
+
+                if (count === 5) {
+
+                    window.clearInterval(intervalId);
+
+                    document.getElementById("intervalOutput").textContent =
+                        "Interval stopped after 5 counts.";
+
+                    intervalRunning = false;
+                }
+
+            }, 2000);
+        }
+
+    </script>
+
+</body>
+</html>
